@@ -1,8 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+// import styles ccs
+import "./assets/css/styles.css"
 // import of Bootstrap styles and icons
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+// import of mdb styles
+import 'mdb-ui-kit/css/mdb.min.css';
 
 // import components
 import Favicon from "react-favicon";
