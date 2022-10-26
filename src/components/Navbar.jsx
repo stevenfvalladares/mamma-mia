@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 export default function Navbar() {
   return (
     <header>
-      <div className="px-3 py-2 text-bg-info">
+      <div className="px-3 py-1 text-bg-info">
         <div className="container">
           <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <NavLink
