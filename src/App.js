@@ -34,8 +34,6 @@ export default function App() {
 
     let pizzas = data;
 
-    console.log(pizzas)
-
     setPizzas(pizzas);
   };
 
