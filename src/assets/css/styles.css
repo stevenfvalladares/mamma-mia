@@ -16,6 +16,10 @@
     margin-bottom: 25px;
 }
 
+.card-detail {
+    width: auto;
+}
+
 .list {
     list-style: none;
 }
