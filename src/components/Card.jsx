@@ -1,9 +1,13 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+
+// import components
 import Context from "../context/Context";
 import Icon from "../assets/icons/pizza.png";
 
 export default function Card() {
   const { pizzas, setPizzas } = useContext(Context);
+  const navigate = useNavigate()
 
   return (
     <>
@@ -15,30 +19,14 @@ export default function Card() {
             <hr className="hr" />
             <p className="h6">Ingredientes</p>
             <ul className="mt-3 list">
-              <li>
+              {pizza.ingredients.map((ingredient, i) => (
+              <li key={i}>
                 <img src={Icon} alt="icon" />
                 <span className="ms-2 text-capitalize">
-                  {pizza.ingredients[0]}
+                  {ingredient}
                 </span>
               </li>
-              <li>
-                <img src={Icon} alt="icon" />
-                <span className="ms-2 text-capitalize">
-                  {pizza.ingredients[1]}
-                </span>
-              </li>
-              <li>
-                <img src={Icon} alt="icon" />
-                <span className="ms-2 text-capitalize">
-                  {pizza.ingredients[2]}
-                </span>
-              </li>
-              <li>
-                <img src={Icon} alt="icon" />
-                <span className="ms-2 text-capitalize">
-                  {pizza.ingredients[3]}
-                </span>
-              </li>
+              ))}
             </ul>
           </div>
           <hr className="hr mt-0" />
@@ -47,7 +35,7 @@ export default function Card() {
               <i className="fas fa-dollar-sign"></i>{" "}
               {new Intl.NumberFormat("es-CL").format(pizza.price)}
             </h4>
-            <button type="button" className="btn btn-info">
+            <button type="button" className="btn btn-info" onClick={() => navigate(`/pizza/${pizza.id}`)}>
               <i className="fas fa-eye"></i> Ver Más
             </button>
             <button type="button" className="btn btn-danger ms-2">
