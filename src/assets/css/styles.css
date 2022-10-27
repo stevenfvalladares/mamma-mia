@@ -23,3 +23,9 @@
 .list {
     list-style: none;
 }
+
+.shopping-cart-img {
+    margin-left: 10px;
+    width: 45px;
+    height: 45px;
+}
