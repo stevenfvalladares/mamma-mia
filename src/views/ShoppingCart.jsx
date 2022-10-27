@@ -19,7 +19,7 @@ export default function ShoppingCart() {
             <div>
               <h6 className="text-success mb-1">
                 <i className="fas fa-dollar-sign"></i>{" "}
-                {new Intl.NumberFormat("es-CL").format(5950)}
+                {new Intl.NumberFormat("es-CL").format()}
               </h6>
               <i className="far fa-minus-square" role="button"></i>{" "}1{" "}<i className="far fa-plus-square" role="button"></i>
             </div>
@@ -32,7 +32,7 @@ export default function ShoppingCart() {
             <h5 className="card-title">Total del pedido</h5>
             <h5>
               <i className="fas fa-dollar-sign"></i>{" "}
-              {new Intl.NumberFormat("es-CL").format(5950)}
+              {new Intl.NumberFormat("es-CL").format()}
             </h5>
             <button type="button text" className="btn btn-primary">
               Proceder al pago
