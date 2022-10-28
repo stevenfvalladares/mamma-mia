@@ -6,7 +6,7 @@ import Context from "../context/Context";
 import Icon from "../assets/icons/pizza.png";
 
 export default function Card() {
-  const { pizzas, setPizzas } = useContext(Context);
+  const { pizzas, addToCart } = useContext(Context);
   const navigate = useNavigate()
 
   return (
@@ -38,7 +38,7 @@ export default function Card() {
             <button type="button" className="btn btn-info" onClick={() => navigate(`/pizza/${pizza.id}`)}>
               <i className="fas fa-eye"></i> Ver Más
             </button>
-            <button type="button" className="btn btn-danger ms-2">
+            <button type="button" className="btn btn-danger ms-2" onClick={() => addToCart(pizza)}>
               <i className="fas fa-cart-arrow-down"></i> Añadir
             </button>
           </div>

@@ -7,7 +7,7 @@ import Icon from "../assets/icons/pizza.png";
 
 export default function Detail() {
   const { id } = useParams();
-  const { pizzas, setPizzas } = useContext(Context);
+  const { pizzas, addToCart } = useContext(Context);
 
   return (
     <div className="container d-flex justify-content-center py-5">
@@ -46,7 +46,7 @@ export default function Detail() {
                     <i className="fas fa-dollar-sign"></i>{" "}
                     {new Intl.NumberFormat("es-CL").format(element.price)}
                   </h4>
-                  <button type="button" className="btn btn-danger ms-2">
+                  <button type="button" className="btn btn-danger ms-2" onClick={() => addToCart(element)}>
                     <i className="fas fa-cart-arrow-down"></i> Añadir
                   </button>
                 </div>

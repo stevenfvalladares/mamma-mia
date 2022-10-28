@@ -21,10 +21,9 @@ import Detail from "./views/Detail";
 import ShoppingCart from "./views/ShoppingCart";
 import NotFound from "./views/NotFound";
 
-
 export default function App() {
   const [pizzas, setPizzas] = useState([]);
-  const globalState = { pizzas, setPizzas };
+  const [cart, setCart] = useState([]);
 
   const endpoint = "/pizzas.json";
 
@@ -40,6 +39,41 @@ export default function App() {
   useEffect(() => {
     getData();
   }, []);
+
+  const addToCart = ({ id, img, name, price }) => {
+    const addOrder = cart.findIndex((item) => item.id === id);
+    const order = { id, img, name, price, quantity: 1 };
+
+    if (addOrder >= 0) {
+      cart[addOrder].quantity++;
+      setCart([...cart]);
+    } else {
+      setCart([...cart, order]);
+    }
+  };
+
+  const incrementOrder = (index) => {
+    cart[index].quantity++;
+    setCart([...cart]);
+  };
+
+  const decrementOrder = (index) => {
+    const { quantity } = cart[index];
+    if (quantity === 1) {
+      cart.splice(index, 1);
+    } else {
+      cart[index].quantity--;
+    }
+    setCart([...cart]);
+  };
+
+  const total = cart.reduce(
+    (a, { quantity, price }) => a + price * quantity,
+    0
+  );
+
+
+  const globalState = { pizzas, setPizzas, cart, setCart, addToCart, incrementOrder, decrementOrder, total };
 
   return (
     <>
