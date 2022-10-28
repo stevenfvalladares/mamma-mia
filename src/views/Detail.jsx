@@ -14,7 +14,7 @@ export default function Detail() {
       {pizzas
         .filter((pizza) => pizza.id === id)
         .map((element, index) => (
-          <div className="card card-detail mt-3" key={index}>
+          <div className="card card-detail mt-3 pb-3" key={index}>
             <div className="row g-0">
               <div className="col-md-6">
                 <img

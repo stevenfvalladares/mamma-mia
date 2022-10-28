@@ -7,7 +7,7 @@ export default function Home() {
     <main>
       <div className="bg-image image text-center shadow-1-strong mb-5 text-white">
         <div className="col-md-8 p-lg-5 mx-auto">
-          <h1 className="display-5 fw-normal">¡Pizzería Mamma Mia!</h1>
+          <h1 className="display-5 fw-normal mt-3">¡Pizzería Mamma Mia!</h1>
           <p className="lead fw-normal">
             ¡Tenemos las mejores Pizzas que podrás encontrar!
           </p>

@@ -10,7 +10,7 @@ export default function ShoppingCart() {
   }, [cart]);
 
   return (
-    <div className="container-fluid bg-light bg-gradient vh-100 d-flex justify-content-center py-5 px-5">
+    <div className="cart-container container-fluid bg-light bg-gradient vh-100 d-flex justify-content-center py-5 px-5">
       <div className="w-50 me-2">
         <ul className="list-group list-group-light me-3 shadow-5">
           {cart.map((item, index) => (
